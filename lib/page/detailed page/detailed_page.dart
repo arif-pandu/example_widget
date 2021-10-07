@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
@@ -16,33 +17,66 @@ class _DetailedPageState extends State<DetailedPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(Get.arguments.toString()),
+        title: Text(
+          // WIDGET NAME
+          Get.arguments[0],
+        ),
         centerTitle: true,
       ),
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          // Ganti pake widget masing"
           Container(
-            margin: EdgeInsets.only(
-              top: 75,
-              bottom: 25,
-            ),
-            height: 100,
-            width: 100,
-            color: Colors.blue,
+            margin: EdgeInsets.only(top: 35, bottom: 10),
+            height: 200,
+            width: MediaQuery.of(context).size.width,
+            color: Colors.amber,
+            // MODEL BUAT WIDGET
+            child: Get.arguments[1],
           ),
-          // Ganti deskripsi sesuai widget
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 30),
+            width: MediaQuery.of(context).size.width,
+            margin: EdgeInsets.symmetric(
+              horizontal: 30,
+              vertical: 20,
+            ),
+            // DESKRIPSI WIDGET
             child: Text(
-              "Animated Container is for build an animated based on rect shape\n There are some parameters",
+              Get.arguments[2],
               textAlign: TextAlign.justify,
               style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
+                fontSize: 20,
+                fontWeight: FontWeight.normal,
               ),
+            ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            margin: EdgeInsets.symmetric(
+              horizontal: 30,
+              vertical: 20,
+            ),
+            // DESKRIPSI WIDGET
+            child: Text(
+              Get.arguments[3],
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                fontSize: 19,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: 50,
+            margin: EdgeInsets.symmetric(
+              horizontal: 30,
+              vertical: 20,
+            ),
+            color: Color(0xffeeeeee),
+            child: Center(
+              child: Text(Get.arguments[4]),
             ),
           ),
         ],

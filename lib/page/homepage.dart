@@ -48,9 +48,17 @@ class _HomePageState extends State<HomePage> {
             delegate: SliverChildBuilderDelegate(
               (context, index) => GestureDetector(
                 onTap: () {
+                  // mainController.mainIndex = index;
+                  // print(index);
                   Get.to(
                     DetailedPage(),
-                    arguments: mainController.widgetsName[index],
+                    arguments: [
+                      mainController.widgetsName[index],
+                      mainController.widgetModel[index],
+                      mainController.widgetDescription[index],
+                      mainController.widgetParameter[index],
+                      mainController.widgetSourceCode[index],
+                    ],
                   );
                 },
                 child: Thumbnail(
