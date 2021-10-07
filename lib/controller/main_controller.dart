@@ -30,14 +30,63 @@ class MainController extends GetxController {
   ];
 
   List widgetDescription = [
-    "ANimated Align AdalahANimated Align ANimated Align AdalahANimated Align AdalahAdalah AdalahANimated Align AdalahAdalah AdalahANimated Align AdalahAdalah"
+    // AnimatedAlign
+    "Animated version of Align which automatically transitions the child's position over a given duration whenever the given alignment changes."
   ];
 
   List widgetParameter = [
-    "\u2022 Parameter Tiap Widget\n\u2022 Ini juga Parameter",
+    //AnimatedAlign
+    {
+      "properties": [
+        "alignment",
+        "child",
+        "curve",
+        "duration",
+        "heightFactor",
+        "onEnd",
+        "widthFactor"
+      ],
+      "type": [
+        "AlignmentGeometry",
+        "Widget",
+        "Curve",
+        "Duration",
+        "double",
+        "VoidCallBack",
+        "double"
+      ],
+    },
+    {
+      "properties": ["height", "width"],
+      "type": ["double", "double"],
+    },
+    {
+      "properties": ["duration", "curve"],
+      "type": ["Duration", "Curve"],
+    },
   ];
 
   List widgetSourceCode = [
     "AnimatedContainer Source code",
   ];
 }
+
+// RichText(
+//               text: TextSpan(
+//                 text: Get.arguments[3][mainController.mainIndex]["properties"],
+//                 style: TextStyle(
+//                   fontSize: 19,
+//                   fontWeight: FontWeight.bold,
+//                 ),
+//                 children: [
+//                   TextSpan(
+//                     text: Get.arguments[3][mainController.mainIndex]["type"],
+//                     style: TextStyle(
+//                       fontSize: 19,
+//                       fontWeight: FontWeight.normal,
+//                       color: Colors.lightBlue[600],
+//                     ),
+//                   ),
+//                 ],
+//               ),
+//             ),

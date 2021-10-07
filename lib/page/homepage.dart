@@ -53,11 +53,11 @@ class _HomePageState extends State<HomePage> {
                   Get.to(
                     DetailedPage(),
                     arguments: [
-                      mainController.widgetsName[index],
-                      mainController.widgetModel[index],
-                      mainController.widgetDescription[index],
-                      mainController.widgetParameter[index],
-                      mainController.widgetSourceCode[index],
+                      mainController.widgetsName[index], //0
+                      mainController.widgetModel[index], //1
+                      mainController.widgetDescription[index], //2
+                      mainController.widgetParameter[index], //3
+                      mainController.widgetSourceCode[index], //4
                     ],
                   );
                 },

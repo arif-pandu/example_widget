@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:example_widget/controller/main_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -15,6 +16,7 @@ class DetailedPage extends StatefulWidget {
 class _DetailedPageState extends State<DetailedPage> {
   @override
   Widget build(BuildContext context) {
+    MainController mainController = Get.put(MainController());
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -57,14 +59,36 @@ class _DetailedPageState extends State<DetailedPage> {
               horizontal: 30,
               vertical: 20,
             ),
+
             // DESKRIPSI WIDGET
-            child: Text(
-              Get.arguments[3],
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 19,
-                fontWeight: FontWeight.bold,
-              ),
+            child: ListView.builder(
+              itemCount: Get.arguments[3].length,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+                  child: RichText(
+                    text: TextSpan(
+                      text: Get.arguments[3][mainController.mainIndex]
+                          ["properties"],
+                      style: TextStyle(
+                        fontSize: 19,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      children: [
+                        TextSpan(
+                          text: Get.arguments[3][mainController.mainIndex]
+                              ["type"],
+                          style: TextStyle(
+                            fontSize: 19,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.lightBlue[600],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
             ),
           ),
           Container(
