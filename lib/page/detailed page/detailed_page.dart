@@ -26,8 +26,7 @@ class _DetailedPageState extends State<DetailedPage> {
         centerTitle: true,
       ),
       body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+          child: ListView(
         children: [
           Container(
             margin: EdgeInsets.only(top: 35, bottom: 10),
@@ -55,8 +54,9 @@ class _DetailedPageState extends State<DetailedPage> {
           ),
           Container(
             width: MediaQuery.of(context).size.width,
+            height: Get.arguments[3]['properties'].length.toDouble() * 40,
             margin: EdgeInsets.symmetric(
-              horizontal: 30,
+              horizontal: 20,
               vertical: 20,
             ),
 
@@ -68,16 +68,15 @@ class _DetailedPageState extends State<DetailedPage> {
                   margin: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
                   child: RichText(
                     text: TextSpan(
-                      text: Get.arguments[3][mainController.mainIndex]
-                          ["properties"],
+                      text: Get.arguments[3]['properties'][index] + '\t',
                       style: TextStyle(
                         fontSize: 19,
                         fontWeight: FontWeight.bold,
+                        color: Colors.black,
                       ),
                       children: [
                         TextSpan(
-                          text: Get.arguments[3][mainController.mainIndex]
-                              ["type"],
+                          text: Get.arguments[3]['type'][index],
                           style: TextStyle(
                             fontSize: 19,
                             fontWeight: FontWeight.normal,
