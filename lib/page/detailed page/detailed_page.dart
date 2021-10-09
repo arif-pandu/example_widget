@@ -25,11 +25,10 @@ class _DetailedPageState extends State<DetailedPage> {
         ),
         centerTitle: true,
       ),
-      body: Center(
-          child: ListView(
+      body: ListView(
         children: [
           Container(
-            margin: EdgeInsets.only(top: 35, bottom: 10),
+            margin: EdgeInsets.only(bottom: 10),
             height: 200,
             width: MediaQuery.of(context).size.width,
             color: Colors.amber,
@@ -39,39 +38,48 @@ class _DetailedPageState extends State<DetailedPage> {
           Container(
             width: MediaQuery.of(context).size.width,
             margin: EdgeInsets.symmetric(
-              horizontal: 30,
-              vertical: 20,
+              horizontal: 25,
+              vertical: 15,
             ),
             // DESKRIPSI WIDGET
-            child: Text(
-              Get.arguments[2],
-              textAlign: TextAlign.justify,
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.normal,
+            child: Container(
+              padding: EdgeInsets.all(7.5),
+              decoration: BoxDecoration(
+                border: Border.all(width: 2, color: Colors.lightBlue),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Text(
+                Get.arguments[2],
+                textAlign: TextAlign.justify,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.normal,
+                ),
               ),
             ),
           ),
           Container(
             width: MediaQuery.of(context).size.width,
-            height: Get.arguments[3]['properties'].length.toDouble() * 40,
+            height: Get.arguments[3]['properties'].length.toDouble() * 42 + 20,
+            // height: 150,
             margin: EdgeInsets.symmetric(
               horizontal: 20,
               vertical: 20,
             ),
 
-            // DESKRIPSI WIDGET
+            // PARAMETER WIDGET
             child: ListView.builder(
-              itemCount: Get.arguments[3].length,
+              itemCount: Get.arguments[3]['properties'].length,
+              physics: NeverScrollableScrollPhysics(),
               itemBuilder: (BuildContext context, int index) {
                 return Container(
-                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                   child: RichText(
                     text: TextSpan(
                       text: Get.arguments[3]['properties'][index] + '\t',
                       style: TextStyle(
                         fontSize: 19,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w500,
                         color: Colors.black,
                       ),
                       children: [
@@ -103,7 +111,7 @@ class _DetailedPageState extends State<DetailedPage> {
             ),
           ),
         ],
-      )),
+      ),
     );
   }
 }

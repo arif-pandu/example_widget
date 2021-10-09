@@ -48,8 +48,6 @@ class _HomePageState extends State<HomePage> {
             delegate: SliverChildBuilderDelegate(
               (context, index) => GestureDetector(
                 onTap: () {
-                  // mainController.mainIndex = index;
-                  // print(index);
                   Get.to(
                     DetailedPage(),
                     arguments: [

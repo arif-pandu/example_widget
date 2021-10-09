@@ -28,7 +28,7 @@ class _ThumbnailState extends State<Thumbnail> {
       width: 70,
       decoration: BoxDecoration(
         color: widget.colorThumb,
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Center(
         child: Text(

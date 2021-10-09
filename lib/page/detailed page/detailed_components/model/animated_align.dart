@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AnimatedAlignModel extends StatefulWidget {
@@ -8,21 +9,30 @@ class AnimatedAlignModel extends StatefulWidget {
 }
 
 class _AnimatedAlignModelState extends State<AnimatedAlignModel> {
+  bool selected = false;
+  void changed() {
+    setState(() {
+      selected = !selected;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    bool selected = false;
     return GestureDetector(
       onTap: () {
-        setState(() {
-          selected = !selected;
-        });
+        changed();
       },
-      child: AnimatedAlign(
-        alignment: selected ? Alignment.topRight : Alignment.bottomLeft,
-        duration: Duration(seconds: 1),
-        curve: Curves.fastOutSlowIn,
-        child: Center(
-          child: FlutterLogo(size: 30),
+      child: Center(
+        child: Container(
+          color: Colors.transparent,
+          height: 200,
+          width: 300,
+          child: AnimatedAlign(
+            alignment: selected ? Alignment(-1, -1) : Alignment(1, 1),
+            duration: Duration(seconds: 1),
+            curve: Curves.fastOutSlowIn,
+            child: FlutterLogo(size: 75.0),
+          ),
         ),
       ),
     );
