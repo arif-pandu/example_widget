@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:example_widget/controller/main_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -16,7 +15,6 @@ class DetailedPage extends StatefulWidget {
 class _DetailedPageState extends State<DetailedPage> {
   @override
   Widget build(BuildContext context) {
-    MainController mainController = Get.put(MainController());
     return Scaffold(
       appBar: AppBar(
         title: Text(

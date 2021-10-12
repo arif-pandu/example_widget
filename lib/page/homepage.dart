@@ -1,7 +1,5 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
-import 'dart:math';
-
 import 'package:example_widget/controller/main_controller.dart';
 import 'package:example_widget/page/detailed%20page/detailed_page.dart';
 import 'package:example_widget/widget/thumbnail.dart';

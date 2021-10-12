@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'dart:math';
 import 'package:flutter/material.dart';
 
@@ -20,7 +22,7 @@ class _AnimatedContainerModelState extends State<AnimatedContainerModel> {
   Widget build(BuildContext context) {
     int min = 50;
     int max = 200;
-    var random = new Random();
+    var random = Random();
     int range = min + random.nextInt(max - min);
 
     return Center(

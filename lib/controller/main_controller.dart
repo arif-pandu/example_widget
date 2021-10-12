@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:example_widget/page/detailed%20page/detailed_components/model/animated_align.dart';
 import 'package:example_widget/page/detailed%20page/detailed_components/model/animated_builder.dart';
 import 'package:example_widget/page/detailed%20page/detailed_components/model/animated_container.dart';
@@ -8,13 +10,14 @@ import 'package:example_widget/page/detailed%20page/detailed_components/model/an
 import 'package:example_widget/page/detailed%20page/detailed_components/model/animated_size.dart';
 import 'package:example_widget/page/detailed%20page/detailed_components/model/animated_widget.dart';
 import 'package:example_widget/page/detailed%20page/detailed_components/model/decorated_box_transition.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:example_widget/page/detailed%20page/detailed_components/model/fade_transition.dart';
+
 import 'package:get/get.dart';
 
 class MainController extends GetxController {
   int? mainIndex;
   List widgetsName = [
+    // Animation and Motion
     "Animated Align", //ok
     "Animated Builder", //ok
     "Animated Container", //ok
@@ -24,14 +27,32 @@ class MainController extends GetxController {
     "Animated Positioned", //ok
     "Animated Size", //ok
     "Animated Widget", //ok
-    "Decorated Box Transition",
-    "Fade Transition",
+    "Decorated Box Transition", //ok
+    "Fade Transition", //ok
     "Hero",
     "Positioned Trasition",
     "Rotation Transition",
     "Scale Transition",
     "Size Transition",
     "Slide Transition",
+    // Assets, Images, and Icons
+    "Icon",
+    "Image",
+    "Raw Image",
+    //Async
+    "Future Builder",
+    "Stream Builder",
+    // Basic Widgets
+    "App Bar",
+    "Column",
+    "Container",
+    "Elevated Button",
+    "Flutter Logo",
+    "Placeholder",
+    "Row",
+    "Scaffold",
+    "Text",
+    // Cupertino
   ];
 
   List widgetModel = [
@@ -45,6 +66,7 @@ class MainController extends GetxController {
     AnimatedSizeModel(),
     AnimatedWidgetModel(),
     DecoratedBoxTransitionModel(),
+    FadeTransitionModel(),
   ];
 
   List widgetDescription = [
@@ -68,6 +90,9 @@ class MainController extends GetxController {
     "A widget that rebuilds when the given Listenable changes value. Most ccommonly used with Animation objects, which are Listenable, but it can be used with any Listenable, including ChangeNotifier and ValueNotifier.",
     // DecoratedBoxTransition
     "Animated version of a DecoratedBox that animates the different properties of its Decoration.",
+    // FadeTransition
+    "Animates the opacity of a widget.",
+    //
   ];
 
   List widgetParameter = [
@@ -272,15 +297,31 @@ class MainController extends GetxController {
         "Listenable",
       ],
     },
-    //
+    //Decorated Box Transition
     {
-      "properties": ["1", "2"],
-      "type": ["2", "1"],
+      "properties": [
+        "decoration",
+        "position",
+        "child",
+      ],
+      "type": [
+        "Animation<Decoration>",
+        "DecorationPosition",
+        "Widget",
+      ],
     },
-    //
+    //Fade Transition
     {
-      "properties": ["", ""],
-      "type": ["", ""],
+      "properties": [
+        "opacity",
+        "alwaysIncludeSemantics",
+        "child",
+      ],
+      "type": [
+        "Animation<double>",
+        "bool",
+        "Widget",
+      ],
     },
     //
     {
